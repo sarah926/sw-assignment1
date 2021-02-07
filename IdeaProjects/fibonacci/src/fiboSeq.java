@@ -5,11 +5,25 @@ public class fiboSeq {
         System.out.println("enter a number");
         Scanner scan = new Scanner(System.in);
         int n = scan.nextInt();
-        fiboSeriesIte(n);
 
-        for (int i = 1; i <= n; i++) {
-            System.out.print(fiboSeriesRec(i) + " ");
+        //initializing time and calling iterative sequence
+        long startTime = System.nanoTime();
+        fiboSeriesIte(n);
+        //printing out time results
+        long endTime = System.nanoTime();
+        System.out.println("iteration took " + (endTime-startTime) +" nano seconds" );
+
+        //initializing time and using a for loop to print
+        // out all the values in the recursive sequence
+        long startRec = System.nanoTime();
+        for(int i = 1; i <=n;i++){
+            System.out.print(fiboSeriesRec(i)+ " ");
         }
+        //printing out time results
+        long endRec = System.nanoTime();
+        System.out.println(" ");
+        System.out.print("recursive took " + (endRec-startRec) +" nano seconds" );
+
     }
         //creating recursive sequence
 
